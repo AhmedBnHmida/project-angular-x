@@ -6,7 +6,7 @@
       <div class="col-md-4" style="margin-bottom: 20px;" appHighlight>
         <img [src]="c.image" [alt]="c.title" class="img-fluid h-50 w-75" (click)="afficheDescription(c.id)" />
         <h3>{{ c.title | uppercase }}</h3>
-        <button class="btn btn-primary" *ngIf="c.available">Voir produits</button>
+        <button class="btn btn-primary" *ngIf="c.available" [routerLink]="['/products/',c.id]">Voir produits</button>
         <p *ngIf="!c.available">Catégorie non disponible</p>
 
 

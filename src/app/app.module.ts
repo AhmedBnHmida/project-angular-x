@@ -13,6 +13,8 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { ListCategoriesComponentComponent } from './components/list-categories-component/list-categories-component.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductModule } from './features/product/product.module';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,16 @@ import { HighlightDirective } from './highlight.directive';
     HomeComponentComponent,
     ListCategoriesComponentComponent,
     FilterPipe,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    ProductModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
