@@ -24,8 +24,9 @@ export class ProductComponent {
       next : (p)=>console.log(p.get('id'))
     });
   
+    
 
- // this.listProduct = this.listproduct.filter((pr)=>pr.categoryId == this.id)
+  //this.listProduct = this.listproduct.filter((pr)=>pr.categoryId == this.id)
   }
 
 }
