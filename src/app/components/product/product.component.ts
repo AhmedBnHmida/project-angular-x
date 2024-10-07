@@ -22,11 +22,11 @@ export class ProductComponent {
   list : Product[]=[];
   ngOnInit(){
     this.activated.paramMap.subscribe(res=>{this.id=Number(res.get('id'));
-  for(let p of this.listProducts){
+    for(let p of this.listProducts){
      if (p.categoryId == this.id){
       this.list.push(p);
      }
-  }})
+     }})
   }
 
 

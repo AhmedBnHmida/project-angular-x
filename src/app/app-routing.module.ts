@@ -8,11 +8,12 @@ const routes: Routes = [
 
   { path:"home" , component:HomeComponentComponent },
   { path: "", redirectTo: '/home', pathMatch: 'full' },
-
   { path: "products/:id", component:ProductComponent },
-  //{ path: "products",component:ProductComponent, children },
-   //{ path: ":id", component:ProductComponent },
 
+    //{ path: "products",component:ProductComponent, children },
+    
+  //{ path: 'path/:id', component: oneComponent},​
+  //{path: 'path', component: unComponent, data:{title : 'titrespecial' } }
   
   { path: "**", component:NotFoundComponent }
 
