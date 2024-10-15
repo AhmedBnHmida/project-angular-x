@@ -15,6 +15,9 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductModule } from './features/product/product.module';
+import { FilterProductPipe } from './pipe/filter-product.pipe';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +36,7 @@ import { ProductModule } from './features/product/product.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ProductModule
+    FormsModule
 
   ],
   providers: [],

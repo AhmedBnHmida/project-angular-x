@@ -7,4 +7,6 @@ export class Product {
     price: number;
     brand:string;
     promotion : number;
+    nb_likes : number;
+    quantity : number;
    }
