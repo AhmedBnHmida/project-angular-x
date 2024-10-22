@@ -19,6 +19,7 @@ export class ProductComponent implements OnInit , OnDestroy{
 
  
   ngOnInit(){
+    console.log("init component");
 
     this.listProducts =[
       {"id":1, "name":"Refrigérateur LG Inox","image":"assets/images/refrigerateur-lg.jpeg","categoryId":1, "description":"","price":2800,"brand":"LG","promotion":0,"nb_likes":6,"quantity":10},
@@ -50,18 +51,14 @@ export class ProductComponent implements OnInit , OnDestroy{
     //this.id =  this.activated.snapshot.params['id'];
     console.log('snapshot, method : ');
     console.log(this.activated.snapshot.params['id']);
-
     console.log('params : ');
     this.activated.params.subscribe({
       next : (p)=>console.log(p['id'])
     });
-
-
     console.log('paramMap : ');
     this.activated.paramMap.subscribe({
       next : (p)=>console.log(p.get('id'))
     });
-
  // this.listProducts = this.listProducts.filter((pr)=>pr.categoryId == this.id);
 
   }

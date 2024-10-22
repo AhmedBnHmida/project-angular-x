@@ -18,6 +18,9 @@ import { ProductModule } from './features/product/product.module';
 import { FilterProductPipe } from './pipe/filter-product.pipe';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
+import { FormUserComponent } from './components/form-user/form-user.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,15 @@ import { ContactComponent } from './components/contact/contact.component';
     ListCategoriesComponentComponent,
     FilterPipe,
     HighlightDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    FormCategoryComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TestComponent
 
   ],
   providers: [],

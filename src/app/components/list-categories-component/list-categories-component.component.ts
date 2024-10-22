@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/models/categorie';
 
 @Component({
@@ -7,7 +8,10 @@ import { Category } from 'src/app/models/categorie';
   styleUrls: ['./list-categories-component.component.css']
 })
 export class ListCategoriesComponentComponent {
+
+constructor(private router:Router){}
 title : string ='';
+
 categories : Category[] = [
   {"id":1,"title":"Grand électroménager",
 "image":"assets/images/categorie_electromenager.jpg", "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -31,11 +35,16 @@ categories : Category[] = [
 {"id":6,"title":"Produits voiture", "image":"assets/images/produits_nettoyages.jpg",
 "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.","available":false},
 ]
+
 afficheDescription(id: number) {
   this.categories.forEach(element => {
     if (element.id == id){
       alert(element.description)
     }
   });
+}
+toUpdate(c:Category){
+  console.log(JSON.stringify(c));
+  this.router.navigate(['/category/update',JSON.stringify(c)])
 }
 }

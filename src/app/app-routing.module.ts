@@ -3,10 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductComponent } from './components/product/product.component';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
+import { FormUserComponent } from './components/form-user/form-user.component';
 
 const routes: Routes = [
 
   { path:"home" , component:HomeComponentComponent },
+  {path: 'category/add', component:FormCategoryComponent},
+  {path: 'category/update/:objet',component:FormCategoryComponent},
+ // {path: 'User/add', component:FormUserComponent},
   { path: "", redirectTo: '/home', pathMatch: 'full' },
   //{ path: "products/:id", component:ProductComponent },
 
