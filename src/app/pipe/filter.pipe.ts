@@ -12,6 +12,8 @@ export class FilterPipe implements PipeTransform {
       return values;
     }
   
-return values.filter(e=>e.title.toLowerCase() == titre.toLowerCase());
+//return values.filter(e=>e.title.toLowerCase() == titre.toLowerCase()
+return values.filter (e => e.title.toLowerCase().includes(titre.toLowerCase())
+);
 }
 }

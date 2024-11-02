@@ -10,6 +10,7 @@ export class FilterProductPipe implements PipeTransform {
 
     return value.filter(
     e => e.name.toLowerCase().includes(search.toLowerCase())
+    //e => e.name.toLowerCase()==search.toLowerCase()
       || e.brand.toLowerCase() ==search.toLowerCase() 
       || e.price == Number(search)
     );

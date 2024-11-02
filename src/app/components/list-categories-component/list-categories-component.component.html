@@ -1,7 +1,15 @@
 <div class="container">
   <div class="row">
     Search : <input class="form-control" style="margin-bottom: 30px;" name="title" [(ngModel)]="title">
-    
+
+  <!--
+    <div class="row">
+      <div class="from-group">
+        <label>Search : </label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="title">
+      </div>
+    </div>
+  -->
     <ng-container *ngFor="let c of categories | filter:title">
       <div class="col-md-4" style="margin-bottom: 20px;" appHighlight>
         <img [src]="c.image" [alt]="c.title" class="img-fluid h-50 w-75" (click)="afficheDescription(c.id)" />

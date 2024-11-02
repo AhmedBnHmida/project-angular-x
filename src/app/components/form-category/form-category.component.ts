@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/categorie';
 
@@ -7,10 +7,12 @@ import { Category } from 'src/app/models/categorie';
   templateUrl: './form-category.component.html',
   styleUrls: ['./form-category.component.css']
 })
-export class FormCategoryComponent implements OnInit {
+export class FormCategoryComponent implements OnInit, OnDestroy {
   constructor(private activated:ActivatedRoute){}
   category!: Category;
 
+  ngOnDestroy(): void {}
+  
   ngOnInit(): void {
     this.category =new Category;
     this.activated.params.subscribe({

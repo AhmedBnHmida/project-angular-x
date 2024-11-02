@@ -12,23 +12,23 @@
           <h2>AUCUN RODUCT</h2>
         </div>
 
-      <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let product of list | filterProduct:search">
-        <img [src]="product.image" [alt]="product.name" class="img-fluid h-50 w-75">
-        <h3 [ngClass]="product.nb_likes >= 10 ? 'clignote' : '' " >{{product.name}}</h3>
-        <h3>{{product.price}}</h3>
-        <h3>{{product.nb_likes}}</h3>
-        <h3>{{product.quantity}}</h3>
-        <div class="row">
-          <div class="col-6">
-            <button type="button" class="btn btn-outline-primary" (click)="increment(product)">LIKES</button>
-          </div>
-          <div class="col-6">
-            <button *ngIf="product.quantity == 0 ;else elseBlock" type="button" class="btn btn-outline-secondary" (click)="buy(product) " disabled>BUY</button>
-            <ng-template #elseBlock>
-              <button type="button" class="btn btn-outline-secondary" (click)="buy(product)">BUY</button>
-            </ng-template>
+        <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let product of list | filterProduct:search">
+          <img [src]="product.image" [alt]="product.name" class="img-fluid h-50 w-75">
+          <h3 [ngClass]="product.nb_likes >= 10 ? 'clignote' : '' " >{{product.name}}</h3>
+          <h3>{{product.price}} </h3>
+          <h3>{{product.nb_likes}}</h3>
+          <h3>{{product.quantity}}</h3>
+          <div class="row">
+            <div class="col-6">
+              <button type="button" class="btn btn-outline-primary" (click)="increment(product)">LIKES</button>
+            </div>
+            <div class="col-6">
+              <button *ngIf="product.quantity == 0 ;else ahmed" type="button" class="btn btn-outline-secondary" (click)="buy(product) " disabled>BUY</button>
+              <ng-template #ahmed>
+                <button type="button" class="btn btn-outline-secondary" (click)="buy(product)">BUY</button>
+              </ng-template>
+            </div>
           </div>
         </div>
-      </div>
       </div>
      </div>
