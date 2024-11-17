@@ -1,59 +1,60 @@
-<input class="form-control" [formControl]="search" >
-
-<form [formGroup]="product">
-
-    <div class="mb-3" >
+<!--<input class="form-control" [formControl]="search">-->
+<div class="container">
+    <div class="row">
+    <form [formGroup]="product">
+    <div class="mb-3">
         <label>Name :</label>
         <input class="form-control" formControlName="name">
-        <div *ngIf="name.invalid && (name.dirty || name.touched)">Name is required</div>
+        <div *ngIf="name.invalid && 
+        (name.touched || 
+        name.dirty)">Name is required</div>
     </div>
-    <div class="mb-3" >
-        <label>image :</label>
+    <div class="mb-3">
+        <label>Image :</label>
         <input class="form-control" formControlName="image">
-        <div *ngIf="image.invalid && (image.dirty || image.touched)">Image is required</div>
     </div>
-    <div class="mb-3" >
-        <label>description :</label>
+    <div class="mb-3">
+        <label>Description :</label>
         <input class="form-control" formControlName="description">
     </div>
-    <div class="mb-3" >
-        <label>price :</label>
+    <div class="mb-3">
+        <label>Price :</label>
         <input class="form-control" formControlName="price">
     </div>
-
-
-
-    <div class="mb-3"  formGroupName="brand">
-        <label>brand name :</label>
+    <div class="mb-3" formGroupName="brand">
+        <label>Brand Name :</label>
         <input class="form-control" formControlName="name">
-        <div *ngIf="brandname.invalid && (brandname.dirty || brandname.touched)">
-            <div *ngIf="brandname.errors!['required']"> brandname is required !</div>
-            <div *ngIf="brandname.errors!['minlength']"> Minlenght 8 !</div>
-        </div>
-        <label>brand logo :</label>
-        <input class="form-control" formControlName="brand">
+        <div *ngIf="brandName.invalid && 
+                (brandName.touched || 
+                brandName.dirty)">
+                <div *ngIf="brandName.errors!['required']">
+                    Brand Name is required
+                </div>
+                <div *ngIf="brandName.errors!['minlength']">
+                    Brand Name must have at least 3 characters
+                </div></div>
+        <label>Brand Logo :</label>
+        <input class="form-control" formControlName="logo">
     </div>
-
-
-
-    <div class="mb-3" >
-        <label>promotion :</label>
+    <div class="mb-3">
+        <label>Promotion :</label>
         <input class="form-control" formControlName="promotion">
     </div>
-    <div class="mb-3" >
-        <label>quantity :</label>
+    <div class="mb-3">
+        <label>Quantity :</label>
         <input class="form-control" formControlName="quantity">
     </div>
-
     <div class="mb-3" formArrayName="tags">
         <label>Tags :</label>
-        <div *ngFor="let t of tags">
-            <input class="form-control" [formControl]="t">
-        </div>
-        <button (click)="addTags()">+</button>
+    <div *ngFor="let t of tags">
+        <input class="form-control" [formControl]="t">
     </div>
-
-    <div>
-        <input type="submit" class="btn btn-primary" value="ADD PRODUCT" (click)="submit()">
+    <button (click)="addTags()">+</button>
     </div>
-</form>
+    
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary" value="Add product" (click)="submit()">
+    </div>
+</form>    
+    </div>
+</div>

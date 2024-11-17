@@ -21,6 +21,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { FormUserComponent } from './components/form-user/form-user.component';
 import { TestComponent } from './components/test/test.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TestComponent } from './components/test/test.component';
     FilterPipe,
     HighlightDirective,
     NotFoundComponent,
-    FormCategoryComponent
+    FormCategoryComponent,
+    CategoryComponent
     
   ],
   imports: [
