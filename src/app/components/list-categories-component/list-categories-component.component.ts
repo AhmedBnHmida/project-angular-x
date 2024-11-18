@@ -1,15 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/categorie';
+import { TestComponent } from '../test/test.component';
+import { CategoryComponent } from '../category/category.component';
 
 @Component({
   selector: 'app-list-categories-component',
   templateUrl: './list-categories-component.component.html',
   styleUrls: ['./list-categories-component.component.css']
 })
-export class ListCategoriesComponentComponent {
+export class ListCategoriesComponentComponent implements AfterViewInit {
 
-constructor(private router:Router){}
+  @ViewChild(TestComponent) testComponent!: TestComponent;
+  @ViewChild('i') input!: HTMLInputElement;
+  @ViewChildren(CategoryComponent) children!: QueryList<CategoryComponent>;
+
+  constructor(private router: Router) {}
+  ngAfterViewInit(): void {
+    console.log(this.input);
+    console.log(this.testComponent.test);
+    this.testComponent.start();
+    this.children.forEach((e) => console.log(e));
+  }
+
 title : string ='';
 
 test: string = '10';

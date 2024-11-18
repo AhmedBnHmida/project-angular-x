@@ -4,7 +4,7 @@
     <h3>{{data.title | uppercase}}</h3>
     <button class="btn btn-primary" *ngIf="data.available == true" [routerLink]="['/products/',data.id]">Voir
         produits</button>
-        <button (click)="deleteChild()">Delete</button>
+        <button class="btn btn-danger" (click)="deleteChild()">Delete</button>
    <!-- <button class="btn btn-primary" (click)="toUpdate(c)">Update</button> -->
     <p class="alert alert-danger" *ngIf="data.available == false">Catégorie non disponible</p>
 </div>
