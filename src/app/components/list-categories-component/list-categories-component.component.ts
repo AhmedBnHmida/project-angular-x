@@ -3,19 +3,32 @@ import { Router } from '@angular/router';
 import { Category } from 'src/app/models/categorie';
 import { TestComponent } from '../test/test.component';
 import { CategoryComponent } from '../category/category.component';
+import { CategoryService } from 'src/app/services/category.service';
+
 
 @Component({
   selector: 'app-list-categories-component',
   templateUrl: './list-categories-component.component.html',
   styleUrls: ['./list-categories-component.component.css']
 })
-export class ListCategoriesComponentComponent implements AfterViewInit {
+export class ListCategoriesComponentComponent implements AfterViewInit,OnInit {
 
   @ViewChild(TestComponent) testComponent!: TestComponent;
   @ViewChild('i') input!: HTMLInputElement;
   @ViewChildren(CategoryComponent) children!: QueryList<CategoryComponent>;
 
-  constructor(private router: Router) {}
+  //constructor(private router: Router) {}
+
+  categories : Category[] =[];
+  constructor(
+    private router: Router,
+    private _categoryService: CategoryService
+  ) {}
+
+  ngOnInit(): void {
+    this.categories = this._categoryService.getCategories();
+  }
+
   ngAfterViewInit(): void {
     console.log(this.input);
     console.log(this.testComponent.test);
@@ -23,10 +36,12 @@ export class ListCategoriesComponentComponent implements AfterViewInit {
     this.children.forEach((e) => console.log(e));
   }
 
-title : string ='';
 
+title : string ='';
 test: string = '10';
 
+
+/*
 categories : Category[] = [
   {"id":1,"title":"Grand électroménager",
 "image":"assets/images/categorie_electromenager.jpg", "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -50,6 +65,8 @@ categories : Category[] = [
 {"id":6,"title":"Produits voiture", "image":"assets/images/produits_nettoyages.jpg",
 "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.","available":false},
 ]
+*/
+
 
 afficheDescription(id: number) {
   //foreach : ES
