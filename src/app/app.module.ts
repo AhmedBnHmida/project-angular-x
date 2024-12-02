@@ -22,6 +22,7 @@ import { FormCategoryComponent } from './components/form-category/form-category.
 import { FormUserComponent } from './components/form-user/form-user.component';
 import { TestComponent } from './components/test/test.component';
 import { CategoryComponent } from './components/category/category.component';
+import { FormValidationComponent } from './components/form-validation/form-validation.component';
 
 @NgModule({
   declarations: [
@@ -36,15 +37,16 @@ import { CategoryComponent } from './components/category/category.component';
     HighlightDirective,
     NotFoundComponent,
     FormCategoryComponent,
-    CategoryComponent
+    CategoryComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    TestComponent
-
+    TestComponent,
+    FormValidationComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
