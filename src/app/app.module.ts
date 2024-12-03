@@ -23,6 +23,8 @@ import { FormUserComponent } from './components/form-user/form-user.component';
 import { TestComponent } from './components/test/test.component';
 import { CategoryComponent } from './components/category/category.component';
 import { FormValidationComponent } from './components/form-validation/form-validation.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { FormValidationComponent } from './components/form-validation/form-valid
     AppRoutingModule,
     FormsModule,
     TestComponent,
-    FormValidationComponent
+    FormValidationComponent,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
