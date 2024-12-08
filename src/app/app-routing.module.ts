@@ -10,7 +10,8 @@ const routes: Routes = [
 
   { path:"home" , component:HomeComponentComponent },
   {path: 'category/add', component:FormCategoryComponent},
-  {path: 'category/update/:objet',component:FormCategoryComponent},
+  //{path: 'category/update/:objet',component:FormCategoryComponent},
+  { path: 'category/update/:id', component: FormCategoryComponent },
  // {path: 'User/add', component:FormUserComponent},
   { path: "", redirectTo: '/home', pathMatch: 'full' },
   //{ path: "products/:id", component:ProductComponent },

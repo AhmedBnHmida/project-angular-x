@@ -6,6 +6,7 @@ import { CategoryComponent } from '../category/category.component';
 import { CategoryService } from 'src/app/services/category.service';
 import { ConsumerService } from 'src/app/services/consumer.service';
 import { Subscription } from 'rxjs';
+import { Product } from 'src/app/models/product';
 
 
 @Component({
@@ -98,9 +99,31 @@ afficheDescription(id: number) {
 changeTest() {
   this.test = '12';
 }
+
+
 DeleteCategory(event: any) {
-  console.log(event)
-  this.categories= this.categories.filter((c) => c.id != event);
+
+  console.log(event); 
+  /*
+  this._consumer.delete<Category>('category', event).subscribe({
+    next : ()=>this.categories = this.categories.filter((c) => c.id != event)
+  })
+  */
+  //this.categories= this.categories.filter((c) => c.id != event);
+  this._consumer.get<Product[]>('product')
+      .subscribe({
+        next: (data) => {
+           data.forEach((element) => {
+             console.log(element);
+             element.categoryId == event && this._consumer.delete<Product>('product',element.id).subscribe()
+           });
+  
+          this._consumer.delete<Category>('category', event).subscribe({
+            next:()=> this.categories = this.categories.filter((c) => c.id != event)
+          })   
+      }
+    })   
+     
 }
 
 
